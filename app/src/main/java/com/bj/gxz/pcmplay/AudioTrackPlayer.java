@@ -5,7 +5,7 @@ import android.media.AudioManager;
 import android.media.AudioTrack;
 
 /**
- * Created by guxiuzhong@baidu.com on 2021/4/18.
+ * Created by guxiuzhong on 2021/4/18.
  */
 public class AudioTrackPlayer {
 
