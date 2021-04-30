@@ -1,7 +1,7 @@
 package com.bj.gxz.pcmplay;
 
 /**
- * Created by guxiuzhong@baidu.com on 2021/4/13.
+ * Created by guxiuzhong on 2021/4/13.
  */
 public class OpenSlEsPlayer {
 
