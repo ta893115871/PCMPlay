@@ -5,6 +5,8 @@
 #include "DataQueue.h"
 #include "Audio.h"
 
+#include "AudioRecorder.h"
+
 DataQueue *dataQueue = NULL;
 Audio *audio = NULL;
 
@@ -44,5 +46,32 @@ Java_com_bj_gxz_pcmplay_OpenSlEsPlayer_release(JNIEnv *env, jobject thiz) {
     if (dataQueue != NULL) {
         delete dataQueue;
         dataQueue = NULL;
+    }
+}
+
+AudioRecorder *audioRecorder;
+extern "C"
+JNIEXPORT void JNICALL
+Java_com_bj_gxz_pcmplay_AudioRecorder_startRecord(JNIEnv *env, jobject thiz) {
+    if (audioRecorder == nullptr) {
+        audioRecorder = new AudioRecorder();
+        audioRecorder->startRecord();
+    }
+}
+extern "C"
+JNIEXPORT void JNICALL
+Java_com_bj_gxz_pcmplay_AudioRecorder_stopRecord(JNIEnv *env, jobject thiz) {
+    if (audioRecorder != nullptr) {
+        audioRecorder->stopRecord();
+    }
+}
+extern "C"
+JNIEXPORT void JNICALL
+Java_com_bj_gxz_pcmplay_AudioRecorder_release(JNIEnv *env, jobject thiz) {
+
+    if (audioRecorder != nullptr) {
+        audioRecorder->release();
+        delete audioRecorder;
+        audioRecorder = nullptr;
     }
 }

@@ -2,6 +2,7 @@ package com.bj.gxz.pcmplay;
 
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
+import android.media.AudioRecord;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Environment;
@@ -144,6 +145,18 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
+    private AudioRecorder audioRecorder = new AudioRecorder();
+
+    public void startRecord(View view) {
+        audioRecorder.startRecord();
+    }
+
+    public void stopRecord(View view) {
+        audioRecorder.stopRecord();
+    }
+
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -155,5 +168,6 @@ public class MainActivity extends AppCompatActivity {
         deque2.clear();
         mediaPlayer.stop();
         mediaPlayer.release();
+        audioRecorder.release();
     }
 }

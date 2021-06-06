@@ -22,4 +22,17 @@
         android:text="AudioTrack播放"
         android:textAllCaps="false" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="startRecord"
+        android:text="OpenSLES开始录音"
+        android:textAllCaps="false" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="stopRecord"
+        android:text="OpenSLES停止录音"
+        android:textAllCaps="false" />
 </LinearLayout>
